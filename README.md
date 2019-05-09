@@ -1,10 +1,22 @@
-# Shortened URL
+<h1>Shortened URL</h1>
 
 Shortened URL web application using Java + Spring Boot.
 
-# How to run:
+<h2>How to run:</h2>
 
+1. Build the project
+
+```
+$ mvn clean install
+```
+
+2. Run the project
+
+```
 $ mvn spring-boot:run
+```
+
+<br />
 
 # Main Class:
 
