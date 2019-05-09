@@ -68,10 +68,10 @@ public class UrlService {
     if (StringUtils.isNotBlank(url)) {
       String result = ShortenedUrlProcessorUtility.convertToShortenedUrl(url);
       String req = request.getRequestURL().toString();
-      String prefix = req.substring(0, req.indexOf(request.getRequestURI(), "http://".length()));
-      json.put("shortened_url", prefix + "/" + result);
+      String pref = req.substring(0, req.indexOf(request.getRequestURI(), "http://".length()));
+      json.put("shortened_url", pref + "/" + result);
       if (null == fetchUrlByOriginalUrl(url)) {
-        addUrl(new Url(url, prefix + "/" + result));
+        addUrl(new Url(url, pref + "/" + result));
       }
     }
     return json.toJSONString();
