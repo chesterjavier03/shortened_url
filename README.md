@@ -1,5 +1,4 @@
-# shortened_url
-Shortened URL
+# Shortened URL
 
 Shortened URL web application using Java + Spring Boot.
 
