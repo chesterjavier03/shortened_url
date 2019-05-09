@@ -37,7 +37,7 @@ public class UrlController {
       FileUtils.readLines(FileProcessorUtility.convertFileToRequiredType(file), StandardCharsets.UTF_8).stream().forEach(result -> urlService.processUrl(result, request));
       return new ResponseEntity(new JSONObject().put("json", "Successfully added URLs into the database"), HttpStatus.CREATED);
     } catch (Exception e) {
-      log.error("[BookController] ERROR [{}]", e.getLocalizedMessage());
+      log.error("[UrlController] ERROR [{}]", e.getLocalizedMessage());
       return new ResponseEntity(e.getLocalizedMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }

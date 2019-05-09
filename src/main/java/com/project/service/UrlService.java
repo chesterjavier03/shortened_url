@@ -51,7 +51,7 @@ public class UrlService {
     return json;
   }
 
-  public Url fetchBookByOriginalUrl(String originalUrl) {
+  public Url fetchUrlByOriginalUrl(String originalUrl) {
     log.info("[UrlService] - Fetching data if originalUrl exist in the database - [{}]....", originalUrl);
     CriteriaBuilder builder = em.getCriteriaBuilder();
     CriteriaQuery<Url> query = builder.createQuery(Url.class);
@@ -70,7 +70,7 @@ public class UrlService {
       String req = request.getRequestURL().toString();
       String prefix = req.substring(0, req.indexOf(request.getRequestURI(), "http://".length()));
       json.put("shortened_url", prefix + "/" + result);
-      if (null == fetchBookByOriginalUrl(url)) {
+      if (null == fetchUrlByOriginalUrl(url)) {
         addUrl(new Url(url, prefix + "/" + result));
       }
     }
